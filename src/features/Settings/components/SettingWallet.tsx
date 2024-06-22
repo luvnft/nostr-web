@@ -1,11 +1,11 @@
-import React, { useState } from 'react'
-import Input from '@/components/ui-elements/Input'
-import BulletOption from '@/components/ui-elements/BulletOption'
-import TertiaryButton from '@/components/ui-parts/TertiaryButton'
-import { SettingBudgetPeriod } from '../types'
-import QRCode from 'qrcode.react'
-import PrimaryButton from '@/components/ui-parts/PrimaryButton'
-import { MdOutlineQrCode } from 'react-icons/md'
+import React, { useState } from 'react';
+import Input from '@/components/ui-elements/Input';
+import BulletOption from '@/components/ui-elements/BulletOption';
+import TertiaryButton from '@/components/ui-parts/TertiaryButton';
+import { SettingBudgetPeriod } from '../types';
+import QRCode from 'qrcode.react';
+import PrimaryButton from '@/components/ui-parts/PrimaryButton';
+import { MdOutlineQrCode } from 'react-icons/md';
 
 export const budgetPeriods: SettingBudgetPeriod[] = [
   { id: 'daily', label: 'Daily' },
@@ -15,16 +15,16 @@ export const budgetPeriods: SettingBudgetPeriod[] = [
 ];
 
 const SettingWallet: React.FC = () => {
-  const [connectionUri, setConnectionUri] = useState('')
-  const [defaultZapAmount, setDefaultZapAmount] = useState(0)
-  const [authBudget, setAuthBudget] = useState(0)
-  const [budgetPeriodId, setBudgetPeriodId] = useState('daily')
-  const [qrCodeValue, setQrCodeValue] = useState('')
+  const [connectionUri, setConnectionUri] = useState('');
+  const [defaultZapAmount, setDefaultZapAmount] = useState(0);
+  const [authBudget, setAuthBudget] = useState(0);
+  const [budgetPeriodId, setBudgetPeriodId] = useState('daily');
+  const [qrCodeValue, setQrCodeValue] = useState('');
 
   const handleGenerateQRCode = () => {
-    const qrValue = `nostr+walletauth://example`
-    setQrCodeValue(qrValue)
-  }
+    const qrValue = `nostr+walletauth://example`;
+    setQrCodeValue(qrValue);
+  };
 
   const handleSave = () => {
     console.log({
@@ -32,8 +32,8 @@ const SettingWallet: React.FC = () => {
       defaultZapAmount,
       authBudget,
       budgetPeriodId,
-    })
-  }
+    });
+  };
 
   return (
     <div className="p-4 space-y-8">
@@ -133,7 +133,7 @@ const SettingWallet: React.FC = () => {
         </PrimaryButton>
       </div>
     </div>
-  )
-  
+  );
+};
 
-export default SettingWallet
+export default SettingWallet;
