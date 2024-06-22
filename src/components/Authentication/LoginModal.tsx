@@ -53,21 +53,21 @@ const LoginModal: React.FC<LoginModalProps> = ({
         onClick={onLoginWithNsecApp}
       >
         <FiLogIn className="mr-2" />
-        Nsec.appでログイン
+        Log in with Nsec.app
       </PrimaryButton>
       <SecondaryButton
         className="w-full py-3 pl-8 pr-8 mb-4"
         onClick={onLoginWithExtension}
       >
         <FiLogIn className="mr-2" />
-        拡張機能でログイン
+        Log in with browser extension
       </SecondaryButton>
       <TertiaryButton
         className="w-full py-3 pl-8 pr-8"
         onClick={() => setIsImportingKey(true)}
       >
         <FiKey className="mr-2" />
-        秘密鍵をインポート
+        Import private key
       </TertiaryButton>
     </>
   )
