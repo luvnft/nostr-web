@@ -56,7 +56,7 @@ const ExploreFilters: React.FC<ExploreFiltersProps> = ({
     <div className="flex flex-wrap items-center">
       <div className="flex flex-wrap items-center mt-2 mr-4">
         <label className="mr-2 text-sm text-gray-700 dark:text-gray-300">
-          アカウント:
+           Account:
         </label>
         <div className="grid grid-cols-3 gap-2">
           <FilterButton
@@ -78,7 +78,7 @@ const ExploreFilters: React.FC<ExploreFiltersProps> = ({
       </div>
       <div className="flex flex-wrap items-center mt-2 mr-4">
         <label className="mr-2 text-sm text-gray-700 dark:text-gray-300">
-          表示:
+         Display:
         </label>
         <div className="grid grid-cols-3 gap-2">
           <FilterButton
@@ -100,10 +100,10 @@ const ExploreFilters: React.FC<ExploreFiltersProps> = ({
       </div>
       <Button
         onClick={() => setShowFilters(!showFilters)}
-        className="flex items-center justify-center mt-2 bg-blue-500 text-white text-xs rounded-full"
+        className="flex items-center justify-center mt-2 text-xs text-white bg-blue-500 rounded-full"
       >
         <FiFilter className="mr-2" />
-        詳細フィルタ
+         Detailed Filter
       </Button>
       {showFilters && (
         <div className="flex flex-wrap items-center">
@@ -115,12 +115,12 @@ const ExploreFilters: React.FC<ExploreFiltersProps> = ({
           />
           <div className="flex flex-wrap items-center mr-8">
             <label className="mr-2 text-sm text-gray-700 dark:text-gray-300">
-              タイムスタンプ:
+               Timestamp:
             </label>
             <select
               value={timeframe}
               onChange={(e) => setTimeframe(e.target.value)}
-              className="p-1 bg-gray-200 dark:bg-gray-700 text-sm text-gray-700 dark:text-gray-300 rounded-full"
+              className="p-1 text-sm text-gray-700 bg-gray-200 rounded-full dark:bg-gray-700 dark:text-gray-300"
             >
               <option value="24h">24h</option>
               <option value="1week">1week</option>

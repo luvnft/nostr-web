@@ -56,8 +56,8 @@ const SettingProfile: React.FC = () => {
             'w-full object-cover group-hover:opacity-70 transition-opacity duration-300 ease-in-out'
           )}
           {!banner && (
-            <div className="w-full h-full flex items-center justify-center">
-              <p className="absolute font-thin text-white text-center group-hover:opacity-70 transition-opacity duration-300 ease-in-out">
+            <div className="flex items-center justify-center w-full h-full">
+              <p className="absolute font-thin text-center text-white transition-opacity duration-300 ease-in-out group-hover:opacity-70">
                 Upload Banner
               </p>
             </div>
@@ -71,12 +71,12 @@ const SettingProfile: React.FC = () => {
           onDragOver={(e) => e.preventDefault()}
           onDrop={handleDrop(setAvatar)}
         >
-          <div className="relative group w-full h-full flex items-center justify-center">
+          <div className="relative flex items-center justify-center w-full h-full group">
             {renderImagePreview(
               avatar,
               'w-full h-full object-cover rounded-full group-hover:opacity-70 transition-opacity duration-300 ease-in-out'
             ) || (
-              <div className="w-full h-full object-cover group-hover:opacity-70 transition-opacity duration-300 ease-in-out">
+              <div className="object-cover w-full h-full transition-opacity duration-300 ease-in-out group-hover:opacity-70">
                 <Avatar
                   size={124}
                   name={username}
@@ -92,7 +92,7 @@ const SettingProfile: React.FC = () => {
               </div>
             )}
             {!avatar && (
-              <p className="absolute font-thin text-white text-center group-hover:opacity-70 transition-opacity duration-300 ease-in-out">
+              <p className="absolute font-thin text-center text-white transition-opacity duration-300 ease-in-out group-hover:opacity-70">
                 Upload Avatar
               </p>
             )}
@@ -100,66 +100,71 @@ const SettingProfile: React.FC = () => {
         </div>
       </div>
       <div className="p-4">
-        {[
-          {
-            label: 'ユーザ名',
-            value: username,
-            setter: setUsername,
-            type: 'text',
-          },
-          {
-            label: '表示名',
-            value: displayName,
-            setter: setDisplayName,
-            type: 'text',
-          },
-          {
-            label: 'ウェブサイト',
-            value: website,
-            setter: setWebsite,
-            type: 'text',
-          },
-          {
-            label: 'Nostr Address (NIP-05)',
-            value: nostrAddress,
-            setter: setNostrAddress,
-            type: 'text',
-          },
-          {
-            label: 'Lightning Address',
-            value: lightningAddress,
-            setter: setLightningAddress,
-            type: 'text',
-          },
-          { label: '自己紹介', value: bio, setter: setBio, type: 'textarea' },
-        ].map(({ label, value, setter, type }, index) => (
-          <div className="mb-4" key={index}>
-            <label className="block text-gray-700 dark:text-gray-200">
-              {label}
-            </label>
-            {type === 'textarea' ? (
-              <textarea
-                value={value}
-                onChange={(e) => setter(e.target.value)}
-                className="w-full p-2 border border-gray-200 dark:border-gray-700 bg-transparent rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-              />
-            ) : (
-              <input
-                type={type}
-                value={value}
-                onChange={(e) => setter(e.target.value)}
-                className="w-full p-2 border border-gray-200 dark:border-gray-700 bg-transparent rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-              />
-            )}
-          </div>
-        ))}
-        <PrimaryButton
-          onClick={handleSave}
-          className="flex items-center space-x-2 bg-green-500 text-white rounded-md px-4 py-2 hover:bg-green-700"
-        >
-          保存
-        </PrimaryButton>
-      </div>
+  {[
+    {
+      label: 'Username',
+      value: username,
+      setter: setUsername,
+      type: 'text',
+    },
+    {
+      label: 'Display Name',
+      value: displayName,
+      setter: setDisplayName,
+      type: 'text',
+    },
+    {
+      label: 'Website',
+      value: website,
+      setter: setWebsite,
+      type: 'text',
+    },
+    {
+      label: 'Nostr Address (NIP-05)',
+      value: nostrAddress,
+      setter: setNostrAddress,
+      type: 'text',
+    },
+    {
+      label: 'Lightning Address',
+      value: lightningAddress,
+      setter: setLightningAddress,
+      type: 'text',
+    },
+    { 
+      label: 'Bio', 
+      value: bio, 
+      setter: setBio, 
+      type: 'textarea' 
+    },
+  ].map(({ label, value, setter, type }, index) => (
+    <div className="mb-4" key={index}>
+      <label className="block text-gray-700 dark:text-gray-200">
+        {label}
+      </label>
+      {type === 'textarea' ? (
+        <textarea
+          value={value}
+          onChange={(e) => setter(e.target.value)}
+          className="w-full p-2 bg-transparent border border-gray-200 rounded-md dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+      ) : (
+        <input
+          type={type}
+          value={value}
+          onChange={(e) => setter(e.target.value)}
+          className="w-full p-2 bg-transparent border border-gray-200 rounded-md dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+      )}
+    </div>
+  ))}
+  <PrimaryButton
+    onClick={handleSave}
+    className="flex items-center px-4 py-2 space-x-2 text-white bg-green-500 rounded-md hover:bg-green-700"
+  >
+    Save
+  </PrimaryButton>
+</div>
     </div>
   )
 }

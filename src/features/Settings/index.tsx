@@ -8,11 +8,11 @@ import { BiServer } from 'react-icons/bi'
 import { SettingNavigationItem } from './types'
 
 const settingItems: SettingNavigationItem[] = [
-  { id: 'account', label: 'プロフィール', icon: FiUser },
-  { id: 'wallet', label: 'ウォレット', icon: MdAccountBalanceWallet },
-  { id: 'relay', label: 'リレー', icon: BiServer },
-  { id: 'display', label: '表示', icon: FiEye },
-  { id: 'logout', label: 'ログアウト', icon: FiLogOut },
+  { id: 'account', label: 'Profile', icon: FiUser },
+  { id: 'wallet', label: 'Wallet', icon: MdAccountBalanceWallet },
+  { id: 'relay', label: 'Relay', icon: BiServer },
+  { id: 'display', label: 'Display', icon: FiEye },
+  { id: 'logout', label: 'Logout', icon: FiLogOut },
 ]
 
 const toSettingItem = (id: string): SettingNavigationItem =>

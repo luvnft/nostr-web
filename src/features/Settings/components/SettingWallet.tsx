@@ -8,11 +8,11 @@ import PrimaryButton from '@/components/ui-parts/PrimaryButton'
 import { MdOutlineQrCode } from 'react-icons/md'
 
 export const budgetPeriods: SettingBudgetPeriod[] = [
-  { id: 'daily', label: '日次' },
-  { id: 'weekly', label: '週次' },
-  { id: 'monthly', label: '月次' },
-  { id: 'yearly', label: '年次' },
-]
+  { id: 'daily', label: 'Daily' },
+  { id: 'weekly', label: 'Weekly' },
+  { id: 'monthly', label: 'Monthly' },
+  { id: 'yearly', label: 'Yearly' },
+];
 
 const SettingWallet: React.FC = () => {
   const [connectionUri, setConnectionUri] = useState('')
@@ -38,14 +38,14 @@ const SettingWallet: React.FC = () => {
   return (
     <div className="p-4 space-y-8">
       <div className="space-y-4">
-        <label className="block font-semibold text-gray-700 dark:text-gray-200 mb-2">
-          Nostr Wallet Connectの設定
+        <label className="block mb-2 font-semibold text-gray-700 dark:text-gray-200">
+          Nostr Wallet Connect Settings
         </label>
         <div className="space-y-2">
           <div>
             <label
               htmlFor="connection-uri"
-              className="block text-sm text-gray-700 dark:text-gray-200 mb-2"
+              className="block mb-2 text-sm text-gray-700 dark:text-gray-200"
             >
               Connection URI
             </label>
@@ -55,35 +55,35 @@ const SettingWallet: React.FC = () => {
               value={connectionUri}
               onChange={(e) => setConnectionUri(e.target.value)}
               placeholder="nostr+walletconnect:<pubkey>?relay=<relay>&secret=<secret>"
-              className="w-full p-2 border border-gray-200 dark:border-gray-700 bg-transparent rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full p-2 bg-transparent border border-gray-200 rounded-md dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
           </div>
           <div>
             <label
               htmlFor="zap-amount"
-              className="block text-sm text-gray-700 dark:text-gray-200 mb-2"
+              className="block mb-2 text-sm text-gray-700 dark:text-gray-200"
             >
-              デフォルトのZap数量 (sats)
+              Default Zap Amount (sats)
             </label>
             <Input
               id="zap-amount"
               type="number"
               value={defaultZapAmount.toString()}
               onChange={(e) => setDefaultZapAmount(Number(e.target.value))}
-              className="w-full p-2 border border-gray-200 dark:border-gray-700 bg-transparent rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full p-2 bg-transparent border border-gray-200 rounded-md dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
           </div>
         </div>
       </div>
-
+  
       <div className="space-y-4">
-        <label className="block text-gray-700 dark:text-gray-200 mb-2">
+        <label className="block mb-2 text-gray-700 dark:text-gray-200">
           Nostr Wallet Auth
         </label>
         <div className="space-y-2">
           <div>
-            <label className="block text-sm text-gray-700 dark:text-gray-200 mb-2">
-              初期化期間
+            <label className="block mb-2 text-sm text-gray-700 dark:text-gray-200">
+              Initialization Period
             </label>
             <div className="flex mt-2">
               {budgetPeriods.map((period) => (
@@ -100,16 +100,16 @@ const SettingWallet: React.FC = () => {
           <div>
             <label
               htmlFor="budget"
-              className="block text-sm text-gray-700 dark:text-gray-200 mb-2"
+              className="block mb-2 text-sm text-gray-700 dark:text-gray-200"
             >
-              予算設定 (sats)
+              Budget Setting (sats)
             </label>
             <Input
               id="budget"
               type="number"
               value={authBudget.toString()}
               onChange={(e) => setAuthBudget(Number(e.target.value))}
-              className="w-full p-2 border border-gray-200 dark:border-gray-700 bg-transparent rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full p-2 bg-transparent border border-gray-200 rounded-md dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
           </div>
         </div>
@@ -118,7 +118,7 @@ const SettingWallet: React.FC = () => {
           className="w-[200px] rounded-md"
         >
           <MdOutlineQrCode className="mr-2" />
-          NWAのQRコード出力
+          Generate NWA QR Code
         </TertiaryButton>
         {qrCodeValue && (
           <div className="p-2 border w-[220px] h-[220px] border-gray-200 dark:border-gray-700 bg-white">
@@ -127,13 +127,13 @@ const SettingWallet: React.FC = () => {
         )}
         <PrimaryButton
           onClick={handleSave}
-          className="flex items-center space-x-2 bg-green-500 text-white rounded-md px-4 py-2 hover:bg-green-700"
+          className="flex items-center px-4 py-2 space-x-2 text-white bg-green-500 rounded-md hover:bg-green-700"
         >
-          保存
+          Save
         </PrimaryButton>
       </div>
     </div>
   )
-}
+  
 
 export default SettingWallet

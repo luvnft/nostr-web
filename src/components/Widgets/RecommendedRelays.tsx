@@ -24,7 +24,7 @@ const WidgetRecommendedRelays: React.FC = () => {
   ]
 
   return (
-    <Widget topic="おすすめのリレー">
+    <Widget topic="Recommended Relays">
       {relays.map((relay) => (
         <div
           key={relay.id}
@@ -43,13 +43,13 @@ const WidgetRecommendedRelays: React.FC = () => {
               </div>
             </div>
           </div>
-          <button className="bg-white text-black text-sm font-noto-sans py-1 px-2 rounded-full hover:bg-gray-50 transition">
-            接続
+          <button className="px-2 py-1 text-sm text-black transition bg-white rounded-full font-noto-sans hover:bg-gray-50">
+             Connection
           </button>
         </div>
       ))}
-      <div className="text-blue-500 dark:text-blue-300 hover:underline cursor-pointer mt-4">
-        さらに表示
+      <div className="mt-4 text-blue-500 cursor-pointer dark:text-blue-300 hover:underline">
+         Show More
       </div>
     </Widget>
   )

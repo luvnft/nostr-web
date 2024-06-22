@@ -19,8 +19,8 @@ const PublicChannelList: React.FC<PublicChannelListProps> = ({
   }
 
   return (
-    <div className="bg-gray-100 dark:bg-gray-950 border-r-8 border-gray-200 dark:border-gray-900 p-4 h-full flex flex-col">
-      <h2 className="text-lg font-bold mb-4">公開チャンネル</h2>
+    <div className="flex flex-col h-full p-4 bg-gray-100 border-r-8 border-gray-200 dark:bg-gray-950 dark:border-gray-900">
+      <h2 className="mb-4 text-lg font-bold">Public Channels</h2>
       <ul className="flex-grow overflow-auto">
         {PublicChannels.map((channel) => (
           <li

@@ -4,7 +4,7 @@ export type PublicChannelType = {
 }
 
 export const PublicChannels: PublicChannelType[] = [
-  { id: '1', name: '何でも質問板@Nostr' },
-  { id: '2', name: '好きなボカロを紹介するスレ' },
+  { id: '1', name: 'Ask Anything Board @Nostr' },
+  { id: '2', name: 'Introduce Your Favorite Vocaloid Thread' },
   { id: '3', name: 'Bitcoin 101' },
-]
+];
