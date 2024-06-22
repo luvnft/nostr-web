@@ -38,30 +38,31 @@ const user = new User({
   npub: 'npubexampleexampleexample',
   pubkey: 'pubkeyexampleexampleexample',
   profile: new UserProfile({
-    name: 'moti',
+    name: 'The Wizard of Hahz',
     nostrAddress: '_@motxx.pages.dev',
     image: 'https://randomuser.me/api/portraits/men/5.jpg',
   }),
 })
 
 const navigationItems: NavigationItem[] = [
-  { id: 'home', icon: FiHome, label: 'ホーム', hasPostNoteButton: true },
-  { id: 'explore', icon: FiCompass, label: '探索' },
-  { id: 'notification', icon: FiBell, label: '通知' },
+  { id: 'home', icon: FiHome, label: 'Home', hasPostNoteButton: true },
+  { id: 'explore', icon: FiCompass, label: 'Explore' },
+  { id: 'notification', icon: FiBell, label: 'Notifications' },
   {
     id: 'public-channel',
     icon: FiUsers,
-    label: '公開チャンネル',
+    label: 'Public Channels',
   },
   {
     id: 'message',
     icon: FiMessageSquare,
-    label: 'メッセージ',
+    label: 'Messages',
     hasPostNoteButton: false,
   },
-  { id: 'dashboard', icon: TbDeviceDesktopAnalytics, label: 'アナリティクス' },
-  { id: 'settings', icon: FiSettings, label: '設定', hiddenOnMobile: true },
+  { id: 'dashboard', icon: TbDeviceDesktopAnalytics, label: 'Analytics' },
+  { id: 'settings', icon: FiSettings, label: 'Settings', hiddenOnMobile: true },
 ]
+
 const toItem = (id: NavigationItemId): NavigationItem | undefined =>
   navigationItems.find((item) => item.id === id)
 

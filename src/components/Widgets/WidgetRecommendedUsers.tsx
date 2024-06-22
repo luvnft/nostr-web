@@ -24,7 +24,7 @@ const WidgetRecommendedUsers: React.FC = () => {
   ]
 
   return (
-    <Widget topic="おすすめユーザー">
+    <Widget topic="Recommended Users">
       {users.map((user) => (
         <div
           key={user.id}
@@ -45,13 +45,13 @@ const WidgetRecommendedUsers: React.FC = () => {
               </div>
             </div>
           </div>
-          <button className="bg-white text-black text-sm font-noto-sans py-1 px-2 rounded-full hover:bg-gray-50 transition">
-            フォロー
+          <button className="px-2 py-1 text-sm text-black transition bg-white rounded-full font-noto-sans hover:bg-gray-50">
+             Unite
           </button>
         </div>
       ))}
-      <div className="text-blue-500 dark:text-blue-300 hover:underline cursor-pointer mt-4">
-        さらに表示
+      <div className="mt-4 text-blue-500 cursor-pointer dark:text-blue-300 hover:underline">
+         Show more
       </div>
     </Widget>
   )

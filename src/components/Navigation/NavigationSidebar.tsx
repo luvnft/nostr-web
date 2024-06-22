@@ -28,14 +28,14 @@ const NavigationSidebar: React.FC<NavigationSidebarProps> = ({
   const isActiveItem = (id: NavigationItemId) => id === activeItemId
 
   return (
-    <div className="z-50 bg-white dark:bg-black w-20 lg:w-60 h-full border-r border-gray-200 dark:border-gray-700 flex flex-col justify-between px-4 py-6 fixed font-mplus-2">
+    <div className="fixed z-50 flex flex-col justify-between w-20 h-full px-4 py-6 bg-white border-r border-gray-200 dark:bg-black lg:w-60 dark:border-gray-700 font-mplus-2">
       <div className="space-y-2 lg:space-y-4">
         <Link
-          className="hidden lg:block lg:justify-start items-center lg:space-x-2 p-2 font-mplus-2"
+          className="items-center hidden p-2 lg:block lg:justify-start lg:space-x-2 font-mplus-2"
           to="/"
         >
-          <div className="text-2xl font-bold text-black hidden lg:block dark:text-white">
-            COBRA
+          <div className="hidden text-2xl font-bold text-black lg:block dark:text-white">
+            A
           </div>
         </Link>
         {navigationItems.map((item: NavigationItem, index: number) => (
@@ -49,7 +49,7 @@ const NavigationSidebar: React.FC<NavigationSidebarProps> = ({
           />
         ))}
         <div
-          className="flex justify-center lg:justify-start items-center lg:space-x-2 p-2 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-md transition cursor-pointer active:text-gray-400 dark:active:text-gray-400"
+          className="flex items-center justify-center p-2 text-gray-700 transition rounded-md cursor-pointer lg:justify-start lg:space-x-2 hover:bg-gray-200 dark:hover:bg-gray-700 dark:text-gray-300 active:text-gray-400 dark:active:text-gray-400"
           onClick={handleToggleMining}
         >
           {isMining ? (

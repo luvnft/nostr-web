@@ -36,14 +36,14 @@ const LoginPrompt: React.FC = () => {
   return (
     <>
       <div className="flex items-center justify-between py-4">
-        <p className="pl-2 sm:pl-4 text-gray-700 dark:text-gray-300 font-semibold font-mplus-2">
-          ログインしてNostrを始めよう
+        <p className="pl-2 font-semibold text-gray-700 sm:pl-4 dark:text-gray-300 font-mplus-2">
+          ロSign in to get started with Nostr
         </p>
-        <PrimaryButton className="py-2 px-4" onClick={openLoginModal}>
-          ログイン
+        <PrimaryButton className="px-4 py-2" onClick={openLoginModal}>
+          ロSign in
         </PrimaryButton>
       </div>
-      <hr className="border-1 border-gray-200 dark:border-gray-700" />
+      <hr className="border-gray-200 border-1 dark:border-gray-700" />
       <LoginModal
         isOpen={isLoginModalOpen}
         onClose={closeLoginModal}
