@@ -12,24 +12,24 @@ const ExploreLanguageFilter: React.FC<ExploreLanguageFilterProps> = ({
   return (
     <div className="flex flex-wrap items-center">
       <label className="mr-2 text-sm text-gray-700 dark:text-gray-300">
-        言語圏:
+        Language group:
       </label>
       <select
         value={languageGroupFilter}
         onChange={(e) => setLanguageGroupFilter(e.target.value)}
-        className="p-1 bg-gray-200 dark:bg-gray-700 text-sm text-gray-700 dark:text-gray-300 rounded-full"
+        className="p-1 text-sm text-gray-700 bg-gray-200 rounded-full dark:bg-gray-700 dark:text-gray-300"
       >
-        <option value="all">グローバル</option>
-        <option value="english">英語圏</option>
-        <option value="japanese">日本語</option>
-        <option value="spanish">スペイン語圏</option>
-        <option value="chinese">中国語圏</option>
-        <option value="hindi">ヒンディー語圏</option>
-        <option value="arabic">アラビア語圏</option>
-        <option value="portuguese">ポルトガル語圏</option>
-        <option value="russian">ロシア語圏</option>
-        <option value="french">フランス語圏</option>
-        <option value="german">ドイツ語圏</option>
+        <option value="all">Global</option>
+        <option value="english">English</option>
+        <option value="japanese">Japanese</option>
+        <option value="spanish">Spanish</option>
+        <option value="chinese">Chinese</option>
+        <option value="hindi">Hindi</option>
+        <option value="arabic">Arabic</option>
+        <option value="portuguese">Portuguese</option>
+        <option value="russian">Russian</option>
+        <option value="french">French</option>
+        <option value="german">German</option>
         {/* Add more language groups as needed */}
       </select>
     </div>
@@ -37,3 +37,4 @@ const ExploreLanguageFilter: React.FC<ExploreLanguageFilterProps> = ({
 }
 
 export default ExploreLanguageFilter
+
